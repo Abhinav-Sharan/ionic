@@ -10,11 +10,13 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
   public panchang:any
   
+  
   constructor(public navCtrl: NavController,public restapiServiceProvider:RestapiServiceProvider) {
 
   }
   PanchangClicked(event){
-    this.restapiServiceProvider.load().then(data=>{
+    
+    this.restapiServiceProvider.load(this.TestData.date).then(data=>{
       this.panchang = data;
       document.getElementById("card").textContent = "Today: " + this.panchang["dtoday"] + 
                                                     " Karan:" + this.panchang["dkarana"] + 
@@ -27,5 +29,10 @@ export class HomePage {
       console.log(this.panchang);
     });
   }
+
+  public TestData = {
+    date: '1990-02-20',
+    month: '1990-02-19'
+   }
 }
   

@@ -8,8 +8,8 @@
   <h2>Welcome to Panchang!</h2>
   <ion-item>
     <ion-label>Panchang Time</ion-label>
-    <ion-datetime displayFormat="MMM DD, YYYY HH:mm"></ion-datetime>
-  </ion-item>
+    <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="TestData.date"></ion-datetime>
+   </ion-item>
   <button ion-button (click)= "PanchangClicked($event)">Panchang</button>
   <ion-card>
       <ion-card-content id="card">
